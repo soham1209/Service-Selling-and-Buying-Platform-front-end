@@ -4,7 +4,7 @@ import { map, Observable } from 'rxjs';
 import { UserServiceService } from '../storage/user-service.service';
 
 const BASE_URL = 'http://localhost:8080/';
-export const AUTH_HEADER = 'authorization';
+export const AUTH_HEADER = 'Authorization';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +35,6 @@ export class AuthService {
           console.log(bearerToken);
           this.UserStorageService.saveToken(bearerToken);
           return res;
-
         })
       );
 }

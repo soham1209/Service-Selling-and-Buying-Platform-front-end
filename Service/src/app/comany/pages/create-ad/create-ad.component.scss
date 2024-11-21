@@ -1,0 +1,108 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* Parent Container */
+.parent {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Child Container */
+.child {
+    padding: 20px;
+}
+
+/* Heading Styling */
+.imgDiv h2 {
+    margin: 0 auto;
+    color: #333333;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Profile Badge */
+.profile-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.upload-label {
+    cursor: pointer;
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.profile {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+input[type="file"] {
+    display: block; /* Hide the default file input */
+}
+
+button[nz-button] {
+    margin-top: 10px;
+}
+
+/* Form Inputs */
+nz-form-item {
+    margin-bottom: 20px;
+}
+
+input[nz-input],
+textarea[nz-input] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[nz-input]:focus,
+textarea[nz-input]:focus {
+    border-color: #40a9ff;
+    box-shadow: 0 0 4px rgba(24, 144, 255, 0.2);
+}
+
+/* Add Button */
+button.login-form-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #1890ff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.login-form-button:hover {
+    background-color: #40a9ff;
+}
+
+button.login-form-margin {
+    margin-top: 20px;
+}

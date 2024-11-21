@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoNgZorroAntdModule } from './DemoNgZorroAntdModule';
 import { SignupClientComponent } from './basic/component/signup-client/signup-client.component';
 import { SignupCompanyComponent } from './basic/component/signup-company/signup-company.component'
+import { CreateAdComponent } from './comany/pages/create-ad/create-ad.component';
+import { NzGridModule } from 'ng-zorro-antd/grid';
 
 registerLocaleData(en);
 
@@ -24,7 +26,8 @@ registerLocaleData(en);
     LoginComponent,
     SignupComponent,
     SignupClientComponent,
-    SignupCompanyComponent
+    SignupCompanyComponent,
+    // CreateAdComponent 
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     DemoNgZorroAntdModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NzGridModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US }
