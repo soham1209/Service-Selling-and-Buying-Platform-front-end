@@ -1,0 +1,112 @@
+/* Background styling */
+.bg {
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background to make ads stand out */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Spacing between ads */
+}
+
+/* Ad container */
+.child {
+    width: 100%;
+    max-width: 800px; /* Restricts the card width for better layout */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.child:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Image styling */
+.profile {
+    width: 200px;
+    height: 130px;
+    border-radius: 10px;
+    object-fit: cover; /* Ensures proper scaling of images */
+}
+
+/* Service name styling */
+h2 {
+    cursor: pointer;
+    color: #108ee9; /* Highlighted color */
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+h2:hover {
+    text-decoration: underline;
+}
+
+/* Text styling */
+h5 {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #555;
+}
+
+h5 b {
+    color: #333; /* Highlighted text for price and description */
+}
+
+/* Separator line */
+hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 10px 0;
+}
+
+/* Button container styling */
+div[style="float: right;"] {
+    text-align: right;
+}
+
+button[nz-button] {
+    font-size: 14px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #1890ff; /* Primary button color */
+    color: white;
+    border: none;
+}
+
+button[nz-button]:hover {
+    background-color: #40a9ff; /* Hover state color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .child {
+        padding: 10px;
+    }
+
+    .profile {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    [nz-row] {
+        flex-direction: column;
+    }
+
+    [nz-col] {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h5 {
+        font-size: 14px;
+    }
+}
