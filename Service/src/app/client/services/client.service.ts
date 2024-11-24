@@ -45,6 +45,11 @@ export class ClientService {
     })
   }
 
+  giveReview(reviewDTO: any): Observable<any> {
+    return this.http.post(BASE_URL + `api/client/review`, reviewDTO, {
+      headers: this.createAuthorizationHeader()
+    })
+  }
 
   createAuthorizationHeader(): HttpHeaders {
     let authHeaders: HttpHeaders = new HttpHeaders();
