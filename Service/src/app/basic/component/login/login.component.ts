@@ -12,6 +12,7 @@ import { UserServiceService } from '../../services/storage/user-service.service'
 })
 export class LoginComponent {
   validateForm!: FormGroup;
+  
   constructor(private fb: FormBuilder,
     private authService: AuthService,
     private notification: NzNotificationService,

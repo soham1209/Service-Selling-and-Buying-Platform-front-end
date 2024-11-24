@@ -31,12 +31,20 @@ export class ClientService {
     })
   }
 
-  bookService (bookDTO: any): Observable<any>{
-   
-    return this.http.post(BASE_URL + `api/client/book-service`, bookDTO,{
-    headers: this.createAuthorizationHeader()
+  bookService(bookDTO: any): Observable<any> {
+
+    return this.http.post(BASE_URL + `api/client/book-service`, bookDTO, {
+      headers: this.createAuthorizationHeader()
     })
   }
+
+  getMyBookings(): Observable<any> {
+    const userId = UserServiceService.getUserId();
+    return this.http.get(BASE_URL + `api/client/my-bookings/${userId}`, {
+      headers: this.createAuthorizationHeader()
+    })
+  }
+
 
   createAuthorizationHeader(): HttpHeaders {
     let authHeaders: HttpHeaders = new HttpHeaders();

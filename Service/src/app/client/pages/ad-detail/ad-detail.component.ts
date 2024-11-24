@@ -41,7 +41,7 @@ export class AdDetailComponent {
     const bookServiceDTO ={
       bookDate: this.validateForm.get(['bookDate']).value,
         adId: this.adId,
-          userId: UserServiceService.getUserId()
+          userId: UserServiceService.getUserId(),
   }
     this.clientService.bookService(bookServiceDTO).subscribe(res => {
       this.notification
@@ -52,6 +52,6 @@ export class AdDetailComponent {
         );
       this.router.navigateByUrl('/client/bookings');
     })
-  }
+  } 
 
 }

@@ -14,7 +14,7 @@ export class CompanyService {
 
   postAd(adDTO: any): Observable<any> {
     const userId = UserServiceService.getUserId();
-    return this.http.post(BASE_URL+`api/company/ad/${userId}`, adDTO, {
+    return this.http.post(BASE_URL + `api/company/ad/${userId}`, adDTO, {
       headers: this.createAuthorizationHeader()
     })
   }
@@ -26,23 +26,36 @@ export class CompanyService {
     })
   }
 
-  getAdById(adId:any): Observable<any> {
+  getAdById(adId: any): Observable<any> {
     return this.http.get(BASE_URL + `api/company/ad/${adId}`, {
       headers: this.createAuthorizationHeader()
     })
   }
 
-  updateAd (adId: any, adDTO: any): Observable<any>{
-    return this.http.put(BASE_URL + "api/company/ad/"+`${adId}`, adDTO, {
-    headers: this.createAuthorizationHeader()
-    })
-    }
-  
-    deletedAd (adId: any): Observable<any>{
-      return this.http.delete(BASE_URL + "api/company/ad/"+`${adId}`, {
+  updateAd(adId: any, adDTO: any): Observable<any> {
+    return this.http.put(BASE_URL + "api/company/ad/" + `${adId}`, adDTO, {
       headers: this.createAuthorizationHeader()
-      })
-      }
+    })
+  }
+
+  deletedAd(adId: any): Observable<any> {
+    return this.http.delete(BASE_URL + "api/company/ad/" + `${adId}`, {
+      headers: this.createAuthorizationHeader()
+    })
+  }
+
+  getAllAdBookings(): Observable<any> {
+    const companyId = UserServiceService.getUserId();
+    return this.http.get(BASE_URL + `api/company/bookings/${companyId}`, {
+      headers: this.createAuthorizationHeader()
+    })
+  }
+
+  changeBookingStatus(bookingId: number, status: string): Observable<any> {
+    return this.http.get(BASE_URL + `api/company/booking/${bookingId}/${status}`, {
+      headers: this.createAuthorizationHeader()
+    })
+  }
 
   createAuthorizationHeader(): HttpHeaders {
     let authHeaders: HttpHeaders = new HttpHeaders();

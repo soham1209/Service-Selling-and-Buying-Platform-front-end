@@ -1,26 +1,27 @@
 /* Table container styling */
 nz-table {
     width: 100%;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
     overflow: hidden;
-    padding: 20px;
 }
 
-/* Table heading styling */
-.heading {
-    background-color: #f0f0f0;
-    color: #333;
+/* Table header styling */
+thead th {
+    background-color: #e6f7ff;
+    color: #003973; /* Blue shade */
     text-align: left;
     padding: 10px;
     font-size: 16px;
     font-weight: bold;
+    border-bottom: 2px solid #d9d9d9;
 }
 
 /* Table row styling */
 tbody tr {
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 tbody tr:last-child {
@@ -30,19 +31,21 @@ tbody tr:last-child {
 /* Table cell styling */
 tbody td {
     padding: 10px;
-    color: #555;
+    color: #595959;
     font-size: 14px;
     vertical-align: middle;
 }
 
+/* First column with bold services */
 tbody td:first-child {
     font-weight: bold;
     color: #333;
 }
 
-/* Status column */
-tbody td:nth-child(4) {
+/* Reservation status column */
+tbody td:nth-child(3) {
     font-weight: bold;
+    color: #003973;
 }
 
 /* Button styling */
@@ -63,13 +66,24 @@ button[nz-button][nzDanger]:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Conditional review button spacing */
+tbody td:last-child {
+    text-align: right;
+    padding-right: 20px;
+}
+
+button[nzDanger] {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     nz-table {
-        padding: 10px;
+        padding: 15px;
     }
 
-    .heading {
+    thead th {
         font-size: 14px;
         padding: 8px;
     }
