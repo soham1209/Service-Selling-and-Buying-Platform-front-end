@@ -1,34 +1,67 @@
-.main-header {
-    display: flex;
-    justify-content: space-between;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-heade {
+  background-color: #2541B2;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px;
+  height: 50px;
+}
+
+h2 {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.nav-left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-right: auto;
+}
+
+.nav-right {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-left a, .nav-right a {
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 5px 10px;
+}
+
+.nav-left a:hover, .nav-right a:hover {
+  color: #FFD700;
+}
+
+.nav-left a.active, .nav-right a.active {
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
+
+@media (max-width: 768px) {
+  .main-heade {
+    flex-direction: column;
     align-items: center;
-    padding: 10px 20px;
-    background-color: red;
-  
-    h2 {
-      color: wheat;
-      margin: 0;
-      padding-left: 10px;
-    }
-  
-    .nav-link {
-      display: flex;
-      gap: 15px;
-  
-      a {
-        color: wheat;
-        text-decoration: none;
-        font-weight: bold;
-  
-        &.active {
-          color: yellow; // Active link color
-          border-bottom: 2px solid yellow;
-        }
-  
-        &:hover {
-          color: lightyellow;
-        }
-      }
-    }
+    padding: 10px;
   }
-  
+
+  .nav-left, .nav-right {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+}

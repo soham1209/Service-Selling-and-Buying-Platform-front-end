@@ -1,30 +1,36 @@
-<div class="bg">
-    <div class="parent">
-        <div class="child">
-            <div nz-row class="imgDiv">
-                <div nz-col nzSpan="24">
-                    <h1 style="margin-left: 100px;">Login</h1>
-                </div>
-            </div>
-            <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+<div class="container">
+<div class="left">
+    <img src="/assets/login.svg" alt="Login Img">
+</div>
+
+<div class="right">
+    <div class="topBox">
+        <h1>Sign-In</h1>
+    </div>
+
+    <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+        <div class="box">
+            <div class="input">
                 <nz-form-item>
                     <nz-form-control nzErrorTip="Please input your email!">
-                        <nz-input-group nzPrefixIcon="user">
-                            <input type="text" nz-input formControlName="userName" placeholder="Email" />
-                        </nz-input-group>
+                            <label for="email">Email:</label>
+                            <input type="text" id="email" nz-input formControlName="userName" placeholder="Enter Your Email" />
                     </nz-form-control>
                 </nz-form-item>
-
+            </div>
+            <div class="input">
                 <nz-form-item>
                     <nz-form-control nzErrorTip="Please input your Password!">
-                        <nz-input-group nzPrefixIcon="lock">
-                            <input type="password" nz-input formControlName="password" placeholder="Password" />
-                        </nz-input-group>
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" nz-input formControlName="password" placeholder="Enter Your Password" />
                     </nz-form-control>
                 </nz-form-item>
-                <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button> 
-                Or <a routerLink="/register"> register now! </a>
-            </form>
+            </div>
         </div>
-    </div>
+        <div class="downBox">
+            <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
+            <p>Don't have an account? <a routerLink="/register">Create Account</a></p>
+        </div>
+    </form>
+</div>
 </div>

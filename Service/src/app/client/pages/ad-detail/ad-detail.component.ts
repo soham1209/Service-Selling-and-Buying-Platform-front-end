@@ -16,6 +16,7 @@ export class AdDetailComponent {
   avatarUrl: any;
   ad: any;
   validateForm!: FormGroup;
+  reviews: any ;
 
   constructor(private clientService: ClientService,
     private activatedroute: ActivatedRoute,
@@ -34,6 +35,8 @@ export class AdDetailComponent {
       console.log(res);
       this.avatarUrl = 'data:image/jpeg;base64,' + res.adDTO.returnedImg;
       this.ad = res.adDTO;
+      this.reviews= res.reviewDTOList;
+
     })
   }
 
