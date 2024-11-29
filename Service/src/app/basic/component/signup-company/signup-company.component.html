@@ -1,48 +1,52 @@
-<div class="bg">
-    <div class="parent">
-        <div class="child">
-            <div nz-col>
-                <h1 style="margin-left: 55px">Company Signup</h1>
+
+<h1>Register As Company</h1>
+<div class="container">
+    <div class="right">
+
+        <img src="assets/signup.svg" alt="Register Img">
+
+        <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+            <div class="box">
+                <div class="input-row">
+                    <div class="input">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" formControlName="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input">
+                        <label for="moNo">Mobile Number:</label>
+                        <input type="number" id="moNo" formControlName="phone" placeholder="Mobile Number" required>
+                    </div>
+
+                </div>
+                <div class="input-row">
+                    <div class="input">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" formControlName="password" placeholder="Enter Your Password"
+                            required>
+                    </div>
+                    <div class="input">
+                        <label for="confirm-password">Confirm Password:</label>
+                        <input type="password" id="confirm-password" formControlName="checkPassword"
+                        placeholder="Confirm Your Password" required>
+                    </div>
+
+                </div>
+                <div class="input-row">
+                    <div class="input">
+                        <label for="name">First Name:</label>
+                        <input type="text" id="name" formControlName="name" placeholder="First Name" required>
+                    </div>
+                    <div class="input">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" formControlName="lastname" placeholder="Last Name" required>
+                    </div>
+                </div>
             </div>
-            <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
-                <nz-form-item>
-                    <nz-form-control nzHasFeedback nzErrorTip="The input is not valid E-maill">
-                        <input nz-input placeholder="E-mail" formControlName="email" id="email" />
-                    </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                    <nz-form-control nzHasFeedback nzErrorTip="The input is not valid password!">
-                        <input nz-input type="password" placeholder="Password" formControlName="password" id="email" />
-                    </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                    <nz-form-control nzHasFeedback nzErrorTip="The input is not valid password!">
-                        <input nz-input type="password" placeholder="Conform Password" formControlName="checkPassword" id="email" />
-                    </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                    <nz-form-control nzHasFeedback nzErrorTip="The input is not valid Name">
-                        <input nz-input placeholder="Name" formControlName="name" id="email" />
-                    </nz-form-control>
-                </nz-form-item>
-
-                <nz-form-item>
-                    <nz-form-control nzHasFeedback nzErrorTip="The input is not valid Address">
-                        <input nz-input placeholder="Address" formControlName="address" id="email" />
-                    </nz-form-control>
-                </nz-form-item>
-
-                <nz-form-item>
-                    <nz-form-control nzHasFeedback nzErrorTip="The input is not valid Phone No.">
-                        <input nz-input placeholder="Phone No." formControlName="phone" id="email" />
-                    </nz-form-control>
-
-                </nz-form-item>
-                <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">
-                    Register
-                    </button>
-                    Or <a routerLink="/login"> login now! </a>
-            </form>
-        </div>
+            <div class="downBox">
+                <p>Already Have Account? <a routerLink="/login">Create Account</a></p>
+                <button nz-button [nzType]="'primary'">Register</button>
+            </div>
+        </form>
     </div>
+
 </div>

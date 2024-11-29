@@ -1,73 +1,163 @@
-.bg {
-    background: linear-gradient(to bottom right, #f5f7fa, #c3cfe2); // Light gradient background
-    height: 100vh;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+.container {
     display: flex;
+    flex-direction: row; 
+    align-items: center;
+    height: 80vh; 
+    position: relative;
+    background-color: white;
+    margin-top: 0px;
+    padding-top: 0%;
+}
+
+  
+.right img {
+  position: absolute; /* Position the image absolutely */
+  top: 48%; /* Center vertically */
+  left: 45%; /* Position horizontally as needed */
+  transform: translate(-50%, -50%); /* Adjust for perfect centering */
+  max-width: 60%; /* Scale image size */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 0; /* Keep image below other elements if needed */
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    margin-top: 300px;
+    margin-left: 0px;
+    margin-right: 50px;
+    flex-direction: column;
+    gap: 10px;
     justify-content: center;
     align-items: center;
-  }
-  
-  .parent {
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    width: 400px;
-  }
-  
-  .child {
+    padding: 20px;
+    position: relative; /* Establish positioning context for children */
+}
+
+h1 {
     text-align: center;
-  
-    h1 {
-      font-size: 24px;
-      color: #333;
-      margin-bottom: 20px;
-    }
-  
-    form {
-      .ant-form-item {
-        margin-bottom: 20px;
-      }
-  
-      input {
-        border-radius: 5px;
-        padding: 8px;
-      }
-  
-      .ant-input {
-        height: 40px;
-      }
-  
-      button {
-        width: 100%;
-        height: 40px;
-        border-radius: 5px;
-        font-size: 16px;
-        font-weight: bold;
-      }
-  
-      a {
-        color: #1890ff;
-        &:hover {
-          color: #40a9ff;
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-  
-  // Add responsiveness
-  @media (max-width: 768px) {
-    .parent {
-      width: 90%;
-      padding: 20px;
-    }
-  
-    .child h1 {
-      font-size: 20px;
-    }
-  
-    button {
-      font-size: 14px;
-    }
-  }
-  
+    font-size: 60px;
+    font-weight :bolder;
+    color: #03256C;
+    position: absolute; /* Position the image absolutely */
+  top: 27%; /* Center vertically */
+  left: 50%; /* Position horizontally as needed */
+  transform: translate(-50%, -50%); /* Adjust for perfect centering */
+  z-index: 2; /* Keep image below other elements if needed */
+}
+
+.box {
+  position: absolute; /* Overlay the form box over the SVG */
+    top: 90%; /* Center vertically */
+    left: 55.40%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    z-index: 2; /* Bring box above the SVG */
+    max-width: 1500px;
+    padding: 40px;
+    height: 400px;
+    width: 600px;
+    box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+    background-color: #2541B2;
+    transition: box-shadow 0.3s ease-in-out;
+}
+.box:hover{
+    background-color: #0056b3;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 10);
+    transition: box-shadow 0.3s ease-in-out;
+   
+}
+
+.input {
+    margin-bottom: 30px;
+}
+
+.input label {
+    display: block;
+    font-weight: bold;
+    font-size: medium;
+    margin-bottom:5px;
+    color: white;
+}
+
+.input input {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.input input ::placeholder {
+    color: #535254;
+    font-size: large;
+    font-weight: bold;
+}
+
+.downBox {
+    margin-top: 0px;
+    margin-left: 60px;
+    text-align: center;
+    position: absolute; /* Position the image absolutely */
+  top: 900%; /* Center vertically */
+  left: 50%; /* Position horizontally as needed */
+  transform: translate(-50%, -50%); /* Adjust for perfect centering */
+  z-index: 2; /* Keep image below other elements if needed */
+
+}
+
+.downBox p {
+    margin-top: 10%;
+    font-size: medium;
+    font-weight: bold;
+    color: #03256C;
+}
+
+.downBox a {
+    color: #03256C;
+    text-decoration: none;
+}
+
+.downBox a:hover {
+    text-decoration: underline;
+}
+
+button {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    background-color: #2541B2;
+    margin-top: 5%;
+    color: white;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    cursor: pointer;
+    box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+    transition: box-shadow 0.3s ease-in-out;
+
+}
+
+button:hover {
+    background-color: #0056b3;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 10);
+    transition: box-shadow 0.3s ease-in-out;
+
+}
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Adjust spacing between the inputs */
+}
+
+.input-row .input {
+  flex: 1; /* Ensures inputs are equally sized */
+}

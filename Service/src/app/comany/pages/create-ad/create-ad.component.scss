@@ -1,108 +1,118 @@
-/* General Styling */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
+.container {
+    display: flex;
+    flex-direction: row;
+    margin: 100px auto;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #06BEE1;
+    padding: 50px;
+    max-width: 1200px;
+    height: 400px;
+    box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+    transition: box-shadow 0.3s ease-in-out;
+    gap: 20px;
 }
 
-/* Parent Container */
-.parent {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Form Section */
+.form-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;  /* Ensures the button is positioned relative to this container */
+}
+
+form label {
+    margin-bottom: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    margin-bottom: 15px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+}
+
+form textarea {
+    resize: none;
+    height: 80px;
+}
+
+.add-service-btn {
+    display: flex;
+    justify-content: center; /* Align text horizontally in the center */
+    align-items: center; /* Align text vertically in the center */
+    background-color: #2541B2;
+    font-size: 1.2rem;
+    padding: 10px 50px; /* Adjust padding to make it look balanced */
+    border: none;
+    cursor: pointer;
+    right: -340px;
+    bottom: -10px;
+    box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+    transition: transform 0.3s ease-in-out;
+    color: white;
+}
+
+.add-service-btn:hover {
+    background-color: #2541B2;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 10);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Image Section */
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-box {
+    background-color: white;
+    width: 80%; /* Adjust width for responsive design */
+    height: 200px; /* Fixed height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.image-box input[type="file"] {
+    margin-top: 10px;
+    display: block;
+    padding: 10px;
+}
+
+.image-box .profile {
+   max-height: 100%; /* Ensure it stretches to the container's height */
+    width: 100%; /* Ensure it stretches to the container's width */
+    object-fit: contain; /* Ensures the image fits inside the container */
     border-radius: 8px;
 }
 
-/* Child Container */
-.child {
-    padding: 20px;
-}
-
-/* Heading Styling */
-.imgDiv h2 {
-    margin: 0 auto;
-    color: #333333;
-    font-size: 24px;
-    text-align: center;
-}
-
-/* Profile Badge */
-.profile-badge {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 10px;
-}
-
-.upload-label {
-    cursor: pointer;
-    display: block;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.profile {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
-}
-
-input[type="file"] {
-    display: block; /* Hide the default file input */
-}
-
-button[nz-button] {
-    margin-top: 10px;
-}
-
-/* Form Inputs */
-nz-form-item {
-    margin-bottom: 20px;
-}
-
-input[nz-input],
-textarea[nz-input] {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-input[nz-input]:focus,
-textarea[nz-input]:focus {
-    border-color: #40a9ff;
-    box-shadow: 0 0 4px rgba(24, 144, 255, 0.2);
-}
-
-/* Add Button */
-button.login-form-button {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #1890ff;
+.image-box button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #06BEE1;
+    color: white;
     border: none;
-    border-radius: 4px;
+    padding: 5px;
+    border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-button.login-form-button:hover {
-    background-color: #40a9ff;
-}
-
-button.login-form-margin {
-    margin-top: 20px;
+.image-box button:hover {
+    background-color: #05A9C6;
 }
