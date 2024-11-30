@@ -1,30 +1,18 @@
-<div class="bg">
+<div class="card-container">
+    <div class="card" *ngFor="let ad of ads;let i = index" [ngStyle]="{ 'background-color': getCardBackground(i) }">
+        <img [src]="updateImg(ad.returnedImg)" alt="Home Coloring" class="card-image">
+        <h3>{{ad.serviceName}}</h3>
+        <div class="description">
+            <p>{{ad.description}}</p>
+        </div>
+        <p class="price">Price: {{ad.price}}/-</p>
 
-    <div style="margin-top:10px;" class="child" *ngFor="let ad of ads">
-        <div nz-row>
-            <div nz-col nzSpan="8">
-                <img class="profile" [src]="updateImg(ad.returnedImg)"
-                    style="height: 130px; width: 200px; border-radius: 10px;" />
-            </div>
-            <div nz-col nzSpan="16">
-                <h2 style="cursor: pointer; color: #108ee9;">
-                    {{ad.serviceName}}
-                </h2>
-                <hr>
-                <h5>
-                    Price: <b>{{ad.price}}</b>
-                </h5>
-                <h5>
-                    Description: <b>{{ad.description}}</b>
-                </h5>
-                <hr>
-                <div style="float: right;">
-                    <!-- /company/ad/{{ad.id}} -->
-                    <button nzSize="small" nz-button nzType="primary" routerLink="/company/update/{{ad.id}}">Update</button>
-                    <button (click)="deletedAd(ad.id)" style="margin-left: 10px;" nzSize="small" nz-button nzType="primary"
-                        nzDanger>Delete</button>
-                </div>
-            </div>
+        <div class="button-container">
+            <button class="request-btn" id="update"
+            [ngStyle]="{ 'background-color': getUpdateButtonColor(getCardBackground(i)) }"
+             nz-button nzType="primary"
+                routerLink="/company/update/{{ad.id}}" >Update</button>
+            <button class="request-btn" id="delete" (click)="deletedAd(ad.id)" nz-button nzType="primary">Delete</button>
         </div>
     </div>
 </div>

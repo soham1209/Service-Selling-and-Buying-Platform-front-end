@@ -78,14 +78,13 @@ button {
     border: none;
     cursor: pointer;
     box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
-    transition: transform 0.3s ease-in-out;
+     transition: box-shadow 0.3s ease-in-out;
 }
 
 button:hover {
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 10);
-    transition: transform 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
 }
-
 .sign-up {
     background-color: #2541B2;
     color: white;
@@ -94,6 +93,7 @@ button:hover {
     padding-right: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
+    
 }
 
 .log-in {
