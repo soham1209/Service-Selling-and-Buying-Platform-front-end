@@ -1,7 +1,7 @@
 .container {
     display: flex;
     flex-direction: row;
-    margin: 100px auto;
+    margin: 50px auto;
     justify-content: space-between;
     align-items: center;
     background-color: #06BEE1;
@@ -12,7 +12,17 @@
     transition: box-shadow 0.3s ease-in-out;
     gap: 20px;
 }
-
+h1{
+    font-size: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center; /* Ensure proper alignment for multi-line text */
+      font-weight: bolder;
+      height: 60px; /* Takes full height of the parent if needed */
+      color: #2541B2 ;
+      margin: 0; /* Remove default margins */
+  }
 /* Form Section */
 .form-section {
     flex: 1;

@@ -1,113 +1,132 @@
-.parent {
+.container {
+    display: flex;
+    flex-direction: row;
+    margin: 50px auto;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #06BEE1;
+    padding: 50px;
+    max-width: 1200px;
+    height: 400px;
+    box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+    transition: box-shadow 0.3s ease-in-out;
+    gap: 20px;
+}
+h1{
+  font-size: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-color: #f8f8f8;
-    padding: 20px;
-  }
-  
-  .child {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
-  }
-  
-  .imgDiv {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  h2 {
-    font-size: 24px;
-    font-weight: 600;
-    color: #333;
-  }
-  
-  .file-upload-container {
-    margin-bottom: 20px;
-  }
-  
-  .file-upload-label {
+    text-align: center; /* Ensure proper alignment for multi-line text */
+    font-weight: bolder;
+    height: 60px; /* Takes full height of the parent if needed */
+    color: #2541B2 ;
+    margin: 0; /* Remove default margins */
+}
+
+/* Form Section */
+.form-section {
+    flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    background-color: #1890ff;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;  /* Ensures the button is positioned relative to this container */
+}
+
+form label {
+    margin-bottom: 5px;
     color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .file-upload-label:hover {
-    background-color: #40a9ff;
-  }
-  
-  .file-upload-label input {
-    display: none;
-  }
-  
-  .image-preview {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-  }
-  
-  .circle-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .preview-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  button {
-    display: block;
-    width: 100%;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #1890ff;
-    color: white;
-    font-size: 16px;
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    margin-bottom: 15px;
+    padding: 8px;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #40a9ff;
-  }
-  
-  textarea {
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+}
+
+form textarea {
     resize: none;
-  }
-  
-  @media (max-width: 768px) {
-    .child {
-      padding: 20px;
-    }
-  
-    h2 {
-      font-size: 20px;
-      margin-left: 0;
-    }
-  
-    .file-upload-label span {
-      margin-left: 0;
-    }
-  
-    .file-upload-container {
-      text-align: center;
-    }
-  }
-  
+    height: 80px;
+}
+
+.add-service-btn {
+    display: flex;
+    justify-content: center; /* Align text horizontally in the center */
+    align-items: center; /* Align text vertically in the center */
+    background-color: #2541B2;
+    font-size: 1rem;
+    padding: 20px 50px; /* Adjust padding to make it look balanced */
+    border: none;
+    cursor: pointer;
+    right: -340px;
+    bottom: -10px;
+    box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+    transition: transform 0.3s ease-in-out;
+    color: white;
+}
+
+.add-service-btn:hover {
+    background-color: #2541B2;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 10);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Image Section */
+.image-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* Add spacing between the image box and the button */
+}
+.image-box {
+  background-color: white;
+  width: 500px; /* Adjust width for responsive design */
+  height:300px; /* Fixed height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+.file-upload-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2541B2;
+  color: white;
+  box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+  cursor: pointer;
+  text-align: center; /* Center text inside the button */
+}
+.file-upload-label:hover {
+  background-color: #2541B2;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 10);
+    transition: transform 0.3s ease-in-out;
+}
+
+input[type="file"] {
+  display: none; /* Hide the default file input */
+}
+
+.image-box input[type="file"] {
+    margin-top: 10px;
+    display: block;
+    padding: 10px;
+}
+
+.image-box .profile {
+   max-height: 100%; /* Ensure it stretches to the container's height */
+    width: 100%; /* Ensure it stretches to the container's width */
+    object-fit: contain; /* Ensures the image fits inside the container */
+    border-radius: 8px;
+}

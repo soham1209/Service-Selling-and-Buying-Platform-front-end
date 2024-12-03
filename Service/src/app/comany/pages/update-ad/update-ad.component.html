@@ -1,62 +1,47 @@
-<div style="background-color: #f8f8f8;">
-    <div class="parent">
-        <div class="child">
-            <div nz-row class="imgDiv">
-                <h2 style="margin-left: 230px">Update Ad</h2>
-            </div>
-            <form nz-form [formGroup]="validateForm" (ngSubmit)="updateAd()">
-                <div nz-row>
-
-                    <div class="file-upload-container">
-                        <label class="file-upload-label">
-                            <span style="margin-left: 100px">Select a File</span>
-                            <input type="file" nz-button nzType="primary" accept="image/x-png,image/gif,image/jpeg"
-                                (change)="onFileSelected($event)" />
-                        </label>
-                        <div *ngIf="imagePreview" class="image-preview">
-                            <div class="circle-image">
-                                <img [src]="imagePreview" alt="Existing Image" class="preview-image" />
-                            </div>
-                        </div>
-                        I
-                        <div *ngIf="existingImage" class="image-preview">
-                            <div class="circle-image">
-                                <img [src]="existingImage" alt="Existing Image" class="preview-image" />
-                            </div>
-                        </div>
-
-
-                        <div nz-col nzSpan="24" style="margin-top: 20px">
-                            <nz-form-item>
-                                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required!">
-                                    <input nz-input placeholder="Service Name" formControlName="serviceName" />
-                                </nz-form-control>
-                            </nz-form-item>
-                        </div>
-
-                        <div nz-col nzSpan="24">
-                            <nz-form-item>
-                                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required!">
-                                    <input nz-input placeholder="Price" formControlName="price" type="number" />
-                                </nz-form-control>
-                            </nz-form-item>
-                        </div>
-
-                        <div nz-col nzSpan="24">
-                            <nz-form-item>
-                                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required!">
-                                    <textarea nz-input placeholder="Description"
-                                        formControlName="description"></textarea>
-                                </nz-form-control>
-                            </nz-form-item>
-                        </div>
-
-                    </div>
-                    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">
-                        Update Ad
-                    </button>
+<h1>Update Ad</h1>
+<div class="container">
+    <div class="image-section">
+        <div class="image-box">
+            <div *ngIf="imagePreview" class="image-preview">
+                <div class="circle-image">
+                    <img [src]="imagePreview" alt="Preview Image" class="preview-image" />
                 </div>
-            </form>
+            </div>
+            <div *ngIf="existingImage" class="image-preview">
+                <div class="circle-image">
+                    <img [src]="existingImage" alt="Existing Image" class="preview-image" />
+                </div>
+            </div>
         </div>
+        <!-- Move the label below the image box -->
+        <label class="file-upload-label">
+            Select a File
+            <input id="inputBut" type="file" nz-button nzType="primary" accept="image/x-png,image/gif,image/jpeg"
+                (change)="onFileSelected($event)" />
+        </label>
+    </div>
+    <div class="form-section">
+        <form nz-form [formGroup]="validateForm" (ngSubmit)="updateAd()">
+            <nz-form-item>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required!">
+                    <label for="service-name">Your Service Name:</label>
+                    <input nz-input placeholder="Service Name" formControlName="serviceName" />
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required!">
+                <label for="service-desc">Describe Your Service:</label>
+                <textarea nz-input placeholder="Description" formControlName="description"></textarea>
+            </nz-form-control>
+
+            <nz-form-item>
+                <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This Input Is Required!">
+                    <label for="service-price">Add Your Price:</label>
+                    <input nz-input placeholder="Price" formControlName="price" type="number" />
+                </nz-form-control>
+            </nz-form-item>
+
+            <button nz-button class="add-service-btn" [nzType]="'primary'">Update Ad</button>
+        </form>
     </div>
 </div>

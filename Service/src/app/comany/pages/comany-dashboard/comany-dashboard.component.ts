@@ -42,4 +42,14 @@ export class ComanyDashboardComponent {
         )
     })
   }
+  getStatusClass(status: string): string {
+    if (status === 'APPROVED') {
+      return 'approved';
+    } else if (status === 'REJECTED') {
+      return 'rejected';
+    } else if (status === 'PENDING') {
+      return 'pending';
+    }
+    return ''; // Default case if the status is not defined
+  }
 }

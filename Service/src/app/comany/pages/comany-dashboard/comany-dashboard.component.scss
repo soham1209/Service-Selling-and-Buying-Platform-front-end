@@ -1,86 +1,134 @@
-/* Table container styling */
 nz-table {
-    width: 100%;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    padding: 20px;
+  padding: 20px;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
 }
 
-/* Table heading styling */
-.heading {
-    background-color: #f0f0f0;
-    color: #333;
-    text-align: left;
-    padding: 10px;
-    font-size: 16px;
-    font-weight: bold;
+/* General container style */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* Space between entries */
+  padding: 50px;
+  background-color: #06BEE1;
+  /* Light blue background */
+  box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+  transition: box-shadow 0.3s ease-in-out;
 }
 
-/* Table row styling */
-tbody tr {
-    border-bottom: 1px solid #e0e0e0;
+/* Each entry card */
+.entry {
+  background-color: #0056b3;
+  /* Dark blue for each entry */
+  color: white;
+  padding: 15px;
+  box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+  transition: box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.entry:hover{
+  background-color: #0056b3;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 10);
+    transition: box-shadow 0.3s ease-in-out;
 }
 
-tbody tr:last-child {
-    border-bottom: none;
+/* Entry header */
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 30px;
 }
 
-/* Table cell styling */
-tbody td {
-    padding: 10px;
-    color: #555;
-    font-size: 14px;
-    vertical-align: middle;
+/* Entry body */
+.entry-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-tbody td:first-child {
-    font-weight: bold;
-    color: #333;
+.status span {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 
-/* Status column */
-tbody td:nth-child(4) {
-    font-weight: bold;
+/* Status colors based on reservation status */
+.status span.rejected {
+  color: #ff4d4f;
+  /* Red for Rejected */
 }
 
-/* Button styling */
-button[nz-button] {
-    font-size: 12px;
-    padding: 5px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s, box-shadow 0.3s;
+.status span.approved {
+  color: white;
+  /* White for Approved */
 }
 
-button[nz-button]:hover {
-    background-color: #40a9ff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+.status span.pending {
+  color: #A6C938;
+  /* Green for Pending */
 }
 
-button[nz-button][nzDanger]:hover {
-    background-color: #ff7875;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+/* Client name */
+.client-name {
+  font-size: 18px;
+  margin-right: auto;
+  font-weight: bold;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    nz-table {
-        padding: 10px;
-    }
+/* Date and time */
+.date-time {
+  display: flex;
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: bold;
+}
 
-    .heading {
-        font-size: 14px;
-        padding: 8px;
-    }
+/* Actions (buttons) */
+.actions {
+  display: flex;
+  margin-left: auto;
+  gap: 10px;
+}
 
-    tbody td {
-        padding: 8px;
-        font-size: 12px;
-    }
+/* Accept button */
+button[nzType="primary"] {
+  background-color: #06BEE1;
+  border-color: #06BEE1;
+  color: wheat;
+  font-weight: bold;
+  padding-left: 50px;
+  padding-right: 50px;
+  box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+    transition: box-shadow 0.3s ease-in-out;
+}
 
-    button[nz-button] {
-        font-size: 10px;
-        padding: 4px 10px;
-    }
+/* Decline button */
+button[nzDanger] {
+  background-color: #ff4d4f;
+  border-color: #ff4d4f;
+  color: white;
+  font-weight: bold;
+  padding-left: 50px;
+  padding-right: 50px;
+  box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Button hover effects */
+button[nzType="primary"]:hover {
+  background-color: #06BEE1;
+  border-color: #06BEE1;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 10);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+button[nzDanger]:hover {
+  background-color: #e43e3f;
+  border-color: #e43e3f;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 10);
+    transition: box-shadow 0.3s ease-in-out;
 }
