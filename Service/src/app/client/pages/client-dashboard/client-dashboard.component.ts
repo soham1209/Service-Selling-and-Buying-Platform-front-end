@@ -35,4 +35,16 @@ export class ClientDashboardComponent {
   updateImg(img) {
     return 'data:image/jpeg;base64,' + img;
   }
+
+  getCardBackground(index: number): string {
+    return index % 2 === 0 ? '#06BEE1' : '#2541B2'; // Blue for even index, Light blue for odd index
+  }
+  getUpdateButtonColor(backgroundColor: string): string {
+    if (backgroundColor === '#2541B2') {
+      return '#06BEE1'; // Opposite of #2541B2
+    } else if (backgroundColor === '#06BEE1') {
+      return '#2541B2'; // Opposite of #06BEE1
+    }
+    return '#000000'; // Default color if not matched
+  }
 }

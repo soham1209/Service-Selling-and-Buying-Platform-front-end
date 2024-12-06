@@ -1,124 +1,152 @@
-/* Background container */
-.bg {
-    background-color: #f8f8f8;
-    padding: 20px;
-}
-
-/* Ad details container */
-.ad-details-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-/* Top section styles */
-.top-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
 .ad-detail {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    background-color: #06BEE1;
+    /* White background for the card */
+    box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+    /* Subtle shadow for depth */
+    padding: 30px;
+    /* Spacing inside the card */
+    margin: 20px auto;
+    /* Center alignment with margin */
+    max-width: 75%;
+    /* Maximum width for responsiveness */
 }
 
-.ad-detail img.profile {
-    height: 130px;
-    width: 200px;
-    border-radius: 10px;
+.profile {
+    height: 300px;
+    /* Fixed height */
+    width: 400px;
+    /* Fixed width */
+    box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+    transition: box-shadow 0.3s ease-in-out;
     object-fit: cover;
+    /* Prevent distortion */
+    margin-right: 50px;
+    /* Spacing between image and text */
 }
 
-.ad-detail h2 {
+.service-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.service-detail h2 {
+    font-size: 50px;
+    color: white;
+    /* Blue color for clickable heading */
+    font-weight: bold;
+    text-transform: capitalize;
     cursor: pointer;
-    color: #108ee9;
-    margin: 0;
-    font-size: 22px;
+    margin-bottom: 8px;
 }
 
-.ad-detail h5 {
-    margin: 5px 0;
-    font-size: 16px;
+.service-detail p {
+    font-size: 20px;
+    font-weight: 600;
 }
 
-/* Book service section */
 .book-service {
-    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background-color: #06BEE1;
+    box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 75%;
 }
 
 .book-service h2 {
-    color: #003973;
-    margin-bottom: 15px;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 10px;
 }
 
-button[nz-button] {
-    width: 100%;
+.book-service form {
+    flex-direction: row;
+    width: 50%;
+    align-items: center;
+    margin-left: 200px;
+}
+#bookDate {
+    width: 300px;
+    height: 40px;
+    border: solid 5px #2541B2;
+    box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+    margin-right: 20px;
+
+    &:hover {
+        box-shadow: 0cap 0px 0px rgba(0, 0, 0, 10);
+        transition: box-shadow 0.3s ease-in-out;
+    }
+}
+
+.book-service button {
+    height: 40px;
+    box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+    transition: box-shadow 0.3s ease-in-out;
+    &.invalid-button{
+        background-color: #06BEE1;
+        color: white;
+        box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+    }
+    &.valid-button{
+        background-color: #2541B2;;
+        color: white;
+        box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+        &:hover{
+            box-shadow: 0cap 0px 0px rgba(0, 0, 0, 10);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+    }
+}
+.nz-form-item {
+    margin-bottom: 10px;
+}
+
+
+/* Review card styling */
+
+.reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #06BEE1;
+    box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
     padding: 10px;
-    font-size: 16px;
-    background-color: #003973;
-    color: #ffffff;
-    border-radius: 5px;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    margin: 40px auto;
+    max-width: 75%;
 }
 
-button[nz-button]:hover {
-    background-color: #0056b3;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Reviews section */
-.reviews-section {
-    margin-top: 30px;
-}
 
 .review-card {
-    margin-bottom: 20px;
+    padding: 30px;
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: 350px;
+    margin: 10px;
 }
 
-.review-card nz-card {
-    background-color: #ffffff;
-    border: 1px solid #d9d9d9;
+.review-card nz-card{
+    box-shadow: 5px 6px 0px rgba(0, 0, 0, 10);
+    color: #fff;
+    text-align: center;
     border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.review-card nz-card p {
-    margin: 5px 0;
-    font-size: 16px;
-}
-
-.review-card nz-card strong {
-    font-weight: bold;
-    color: #003973;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .ad-detail {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .ad-detail img.profile {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .book-service {
-        padding: 15px;
-    }
-
-    button[nz-button] {
-        font-size: 14px;
-        padding: 8px;
-    }
+.review-card p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #555;
 }

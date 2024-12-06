@@ -1,37 +1,24 @@
-<form nz-form [formGroup]="validateForm" (submit)="searchAdByName()"
-    style="margin-top: 20px; margin-bottom: 20px; text-align:center;">
-    <input nz-input placeholder="Enter service to search" nzSize="large" style="width: 20%;"
-        formControlName="service" />
-    <button nz-button nzSize="large" nzType="primary" style="margin-left: 15px;"
-        [disabled]="validateForm.invalid">Search</button>
-    T
+
+ <form nz-form [formGroup]="validateForm" (submit)="searchAdByName()">
+    <input nz-input placeholder="Enter service to search" formControlName="service" />
+    <button nz-button [disabled]="validateForm.invalid" 
+    [ngClass]="{'invalid-button':validateForm.invalid,'valid-button':validateForm.valid}">Search</button>
 </form>
  
-<div class="bg">
+<div class="card-container">
+    <div class="card" *ngFor="let ad of ads;let i = index" [ngStyle]="{ 'background-color': getCardBackground(i) }">
+        <img [src]="updateImg(ad.returnedImg)" alt="Home Coloring" class="card-image">
+        <h3>{{ad.serviceName}}</h3>
+        <div class="description">
+            <p>{{ad.description}}</p>
+        </div>
+        <p class="price">Price: {{ad.price}}/-</p>
 
-    <div style="margin-top:10px;" class="child" *ngFor="let ad of ads">
-        <div nz-row>
-            <div nz-col nzSpan="8">
-                <img class="profile" [src]="updateImg(ad.returnedImg)"
-                    style="height: 130px; width: 200px; border-radius: 10px;" />
-            </div>
-            <div nz-col nzSpan="16">
-                <h2 style="cursor: pointer; color: #108ee9;">
-                    {{ad.serviceName}}
-                </h2>
-                <hr>
-                <h5>
-                    Price: <b>{{ad.price}}</b>
-                </h5>
-                <h5>
-                    Description: <b>{{ad.description}}</b>
-                </h5>
-                <hr>
-                <div style="float: right;">
-                    <button nzSize="small" nz-button nzType="primary" routerLink="/client/ad/{{ad.id}}"> View </button>
-
-                </div>
-            </div>
+        <div class="button-container">
+            <button class="request-btn" id="update"
+            [ngStyle]="{ 'background-color': getUpdateButtonColor(getCardBackground(i)) }"
+             nz-button nzType="primary"
+                routerLink="/client/ad/{{ad.id}}"> View </button>
         </div>
     </div>
 </div>
